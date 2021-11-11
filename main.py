@@ -21,11 +21,10 @@ def main():
     output = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'MJPG'), fps, frame_size)
 
     while ret:
-        # current_frame_gray = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
-        # previous_frame_gray = cv2.cvtColor(previous_frame, cv2.COLOR_BGR2GRAY)
-        #
-        # frame_diff = cv2.absdiff(current_frame_gray, previous_frame_gray)
+        # diff
+        # frame_diff = current_frame - previous_frame
 
+        # abs diff
         frame_diff = cv2.absdiff(current_frame, previous_frame)
 
         output.write(frame_diff)
